@@ -1,0 +1,64 @@
+:root{
+  --bg:#0f1011; --ink:#e8e2d7; --muted:rgba(232,226,215,.72);
+  --line:rgba(232,226,215,.14); --gold:rgba(224,194,128,.95);
+  --shadow:rgba(0,0,0,.55);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; color:var(--ink); font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  background: radial-gradient(1200px 800px at 30% 0%, rgba(224,194,128,.10), transparent 60%),
+              radial-gradient(1000px 700px at 90% 10%, rgba(180,220,210,.07), transparent 55%),
+              var(--bg);
+}
+.wrap{max-width:1100px;margin:0 auto;padding:22px 16px 40px}
+.top{border-bottom:1px solid var(--line);padding-bottom:18px}
+.kicker{letter-spacing:.22em;text-transform:uppercase;font-size:12px;color:var(--muted)}
+h1{margin:6px 0 6px;font-size:34px;line-height:1.05}
+.sub{color:var(--muted);font-size:13px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+button{
+  border:1px solid var(--line); background:rgba(255,255,255,.02); color:var(--muted);
+  padding:10px 12px; border-radius:12px; font-size:14px;
+}
+button:active{transform:translateY(1px)}
+#sfx[aria-pressed="true"]{border-color:rgba(224,194,128,.35);color:rgba(224,194,128,.90)}
+.note{margin-top:10px;font-size:12px;color:var(--muted)}
+.grid{
+  padding-top:18px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+@media (min-width:860px){ .grid{grid-template-columns:repeat(3,minmax(0,1fr));} }
+.card{
+  position:relative;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+  border-radius:14px;
+  overflow:hidden;
+}
+.frame{padding:10px}
+.thumb{
+  height:180px;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  background:
+    radial-gradient(600px 250px at 20% 0%, rgba(224,194,128,.10), transparent 55%),
+    repeating-linear-gradient(45deg, rgba(232,226,215,.05), rgba(232,226,215,.05) 6px, rgba(232,226,215,.02) 6px, rgba(232,226,215,.02) 12px);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;
+}
+.sigil{font-size:28px;color:rgba(224,194,128,.85)}
+.sealed{letter-spacing:.25em;font-size:12px;color:var(--muted)}
+.slot{margin-top:4px;font-size:11px;color:rgba(232,226,215,.70);letter-spacing:.08em}
+.meta{padding-top:10px;display:flex;flex-direction:column;gap:6px}
+.name{font-size:14px;font-weight:650}
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.pill{
+  border:1px solid var(--line);padding:4px 8px;border-radius:999px;font-size:12px;color:var(--muted);
+  background:rgba(255,255,255,.02);
+}
+.pill.rarity{border-color:rgba(224,194,128,.25);color:rgba(224,194,128,.90)}
+.price{
+  position:absolute;top:14px;right:14px;font-size:13px;color:var(--ink);
+  padding:6px 8px;border-radius:10px;border:1px solid rgba(224,194,128,.25);
+  background:rgba(15,16,17,.55);backdrop-filter:blur(6px);
+}
+.foot{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
